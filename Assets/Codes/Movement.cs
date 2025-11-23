@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    float speed = 6f;
+    float speed = 70f;
+    float rotatespeed = 5f;
     public Rigidbody rb;
 
     // Start is called before the first frame update
@@ -21,8 +22,14 @@ public class Movement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         Vector3 moving = new Vector3(vertical, 0, -horizontal);
+        
+        transform.position += moving * speed * Time.deltaTime;
 
-        rb.AddForce(moving * speed);
+        if ( moving != Vector3.zero)
+        {
+            Quaternion targetrotate = Quaternion.LookRotation(moving);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetrotate, rotatespeed * Time.deltaTime);
+        }
 
 
     }

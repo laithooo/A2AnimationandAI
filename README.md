@@ -1,5 +1,6 @@
 # A2AnimationandAI
 
+*Important notice* Deliverable 2 on Github is cut short since original was over 100mb. To watch the full unedited video use this link: https://www.youtube.com/watch?v=-XYm4G1nq7U&list=PLVIfaB0GxojNkUmYCjnikOkcYF3I08rsy&index=2
 Used the following tutorials to add the code that allows the rotation of the cars which changes  additive animation weight to get the tilting left/right animation effect: https://www.youtube.com/watch?v=MWMvQRp4tbE
 Used this tutorial to use IK on the cars to the wheels and to get drift effect: https://www.youtube.com/watch?v=GYkQjrydfJw
 

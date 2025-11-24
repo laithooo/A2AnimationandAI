@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public Animator MarioAnimator;
-    float speed = 70f;
+    public SpeedBoost Boost;
     float rotatespeed = 5f;
     public Rigidbody rb;
     public float LeanLeftWeight = 0f;
@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         MarioAnimator = GetComponent<Animator>();
+        Boost = GetComponent<SpeedBoost>();
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class Movement : MonoBehaviour
 
         Vector3 moving = new Vector3(vertical, 0, -horizontal);
         
-        transform.position += moving * speed * Time.deltaTime;
+        transform.position += moving * Boost.speed * Time.deltaTime;
 
         if ( moving != Vector3.zero)
         {
